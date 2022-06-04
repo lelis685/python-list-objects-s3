@@ -23,7 +23,7 @@ def get_data():
     for key in s3_keys:
         obj = s3.get_object(Bucket=s3_bucket,Key = key)
         obj_data = json.loads(obj['Body'].read())
-        data.append(obj_data)
+        data += obj_data
         
     return data
 
